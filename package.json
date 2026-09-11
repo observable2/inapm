@@ -5,6 +5,6 @@
   "scripts": {
     "preview": "notebooks preview --root nbks --template nbks/resources/custom.tmpl",
     "build": "notebooks build --root nbks --out ../dist --template nbks/resources/custom.tmpl -- nbks/*.html",
-    "download": "notebooks download https://observablehq.com/@shadoof/inapm_interliteral > nbks/inapm_interliteral.html"
+    "download": "notebooks download https://observablehq.com/@shadoof/inapm0 > nbks/inapm0.html"
   }
 }
