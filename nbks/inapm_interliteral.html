@@ -1,0 +1,177 @@
+<!doctype html>
+<notebook theme="air">
+  <title>Interliteral</title>
+  <script id="1" type="text/markdown">
+    <span style="float: right; font-variant: small-caps;">Working Draft, John Cayley, June 2026</span>
+    # Interliteral
+  </script>
+  <script id="2" type="text/markdown">
+    The work that ushered me into writing with computation was first characterized by some sense of the significant and affective possibilities that may arise from exposing and exploiting certain relationships between words and their constituent elements. When language is transcribed or otherwise represented graphically, in English, we call these constituent elements ‘letters’ and we take them to be language’s fundamental constituent elements: its *atoms*. This is, of course, a simplification. But it is one that has traction for anyone *literate* and it has been disproportionately reinforced, if not hypostatized by the still predominant Western, now Global, regime of computation.
+
+    Later, my work went on to experiment with translating from one spatial arrangement of letters to another. In the departure arrangement, the letters would be the constituents of one set of words; in the destination arrangement, letters from the same set or literal vocabulary would be moved or replaced to become the constituents of a different set of words. I characterized the processes that moved from one arrangement to another as ‘transliteral.’ The identities of the letters transcend the distinct arrangements and also any transitional arrangements in the shift from one readable state to another.
+  </script>
+  <script id="3" type="text/markdown">
+    But I studied Chinese, and the graphic representation of languages in the sinographic sphere does not make use of graphic linguistic ‘atoms’ that neatly correspond with the Roman letters to which most of the literate world has become accustomed. When working on a major project, _riverIsland_, bringing together Chinese poetics with a personal poetic project that shared these poetics at the level of short lyric descriptions of place, I began to think about processes that would be able to translate from one system of literal transcription to another. From Roman letters to Chinese characters.
+
+    Whereas my transliteral processes worked with one set of ‘atomic’ letters, Roman letters, the processes I came to call ‘interliteral’ had to translate from one set of letters to another, from one atomic ‘table of elements’ to another.
+
+    In transliteral processes the letters retain their integrity. They move or they are replaced. They retain the same kinds of relationships to the words they constitute at any static point in the process. This is impossible with respect to what I am calling ‘interliteral’ processes. The only commonality, regarding either the letters themselves or the differently constituted ‘words’ that they represent is graphic. Thus an ‘interliteral’ translation is a graphic translation.
+
+    For _riverIsland_ I made an animation – triggered at nodal points within the larger project – with interliteral translations. Here is the animation:
+  </script>
+  <script id="4" type="module">
+    let videoBlob;
+    try {
+      videoBlob = await FileAttachment("resources/vids/riCharw5.mp4").blob();
+    } catch (error) {
+      videoBlob = await FileAttachment("riCharw5.mp4").blob();
+    }
+    const videoUrl = URL.createObjectURL(new Blob([videoBlob], {type: "video/mp4"}));
+    display(html`<video src=${videoUrl} controls style="max-width:100%"></video>`);
+  </script>
+  <script id="6" type="text/markdown">
+    I made this, around 1999, with an early vector graphics ‘morphing’ program, and I did so as an amateur (most noticeable is my non-handling of counters in those Roman glyphs that have them) but with a certain degree of sophistication in that, for example, I treated Chinese calligraphic elements separately, mapping them so that they morphed to particular letters.
+
+    Below are the ‘keyframes’ in the animation’s sequence..
+  </script>
+  <script id="7" type="text/html" pinned="">
+    <style>
+      .interliteral-grid {
+        width: 100%;
+        max-width: 640px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+      }
+
+      .interliteral-item {
+        margin: 0;
+      }
+
+      .interliteral-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .interliteral-item figcaption {
+        margin-top: 0.35rem;
+        font-size: 0.85rem;
+        line-height: 1.3;
+        color: var(--theme-foreground-muted);
+      }
+    </style>
+    <div class="interliteral-grid">
+      <figure class="interliteral-item">
+        <img src="resources/imgs/interliteral_kaishu.webp" alt="Interliteral kaishu" />
+        <figcaption>Regular script, <em>kaishu</em>, character. </figcaption>
+      </figure>
+      <figure class="interliteral-item">
+        <img src="resources/imgs/interliteral_pinyin.webp" alt="Interliteral pinyin" />
+        <figcaption>Pinyin romanization.</figcaption>
+      </figure>
+      <figure class="interliteral-item">
+        <img src="resources/imgs/interliteral_squwrd.webp" alt="Interliteral squwrd" />
+        <figcaption>Square Word pinyin, letters of the pinyin spelt into a Square Words character.</figcaption>
+      </figure>
+      <figure class="interliteral-item">
+        <img src="resources/imgs/interliteral_engswd.webp" alt="Interliteral engswd" />
+        <figcaption>Square Word English, letters of the English spelt into a Square Words character.</figcaption>
+      </figure>
+      <figure class="interliteral-item">
+        <img src="resources/imgs/interliteral_en.webp" alt="Interliteral en" />
+        <figcaption>English</figcaption>
+      </figure>
+      <figure class="interliteral-item">
+        <img src="resources/imgs/interliteral_kaishu.webp" alt="Interliteral kaishu repeated" />
+        <figcaption>Regular script (repeated).</figcaption>
+      </figure>
+      <figure class="interliteral-item">
+        <img src="resources/imgs/interliteral_nofont.webp" alt="Interliteral nofont" />
+        <figcaption>No-font glyphs, displayed by a legacy OS when a Chinese font is not installed. </figcaption>
+      </figure>
+      <figure class="interliteral-item">
+        <img src="resources/imgs/interliteral_caoshu.webp" alt="Interliteral caoshu" />
+        <figcaption>Cursive script, <em>caoshu</em>, character.</figcaption>
+      </figure>
+    </div>
+  </script>
+  <script id="8" type="text/markdown">
+    The ordering of these keyframes and the repetition of the regular script character was intentional, and intentionally a compromise in that, in principle, a graphic morph from any of the keyframes to any other was possible. The sequence is conceived as a loop so that the morph from Cursive script (last keyframe) to Regular script (first keyframe) should be read into the figures above and it is, in fact, rendered into the animation.
+
+    The no-font glyphs and Square Words keyframes require a little extra commentary.
+
+    In the 1990s, I was already aware that what I now think of as the ‘regime of computation’ had been historically established and overdetermined by Anglo-American material cultural formations. With respect to the localization and internationalization of computer systems (though much good work was underway), non-alphabetic scripts were, at the time, basically being ‘patched into’ operating systems that had a modularity (a kind of textual atomic structure) built on Roman character sets and, initially, on ASCII. In a critical art gesture, I wanted to point to this structural and ideological bias by visualizing disjunctures of transcription to which non-alphabetic cultures were subjected, unless they adapted to, created, and installed ‘extra resources,’ such as fonts of character sets that needed to be handled by nonstandard protocols and special software. I do not think that I did a good enough job of explaining this at the time and it is likely that any potential effects of the gesture were mostly lost.
+
+    The no-font glyphs show the two glyphs which used to display on Apple Mac computers when a text that had been produced on a system set up to edit Chinese traditional characters was moved to one on which the Chinese font was either not installed or not working. Specifically, of course, these glyphs are those substituted when attempting to display 空 *empty*, romanized *kong*. Moving forward, for any project that explores interliteral interpolation, I would not include this critical art keyframe.
+
+    The Square Words keyframes are another matter. These are derived, with the artist’s permission, from a major multimodal art work by the acclaimed artist, Xu Bing (徐冰 1955- ). Although it has produced many outcomes and installations, his <cite>Square Word Calligraphy</cite> project is fundamentally a system for composing legible Roman letters into rectangular arrangements that resemble Chinese characters. To do this, Xu Bing initially designed a Roman alphabet drawn with Chinese calligraphic strokes and then applied rules for their composition into ‘Square Words’ that more or less conform to the rules for assembling the elements of traditional characters.&nbsp;<span data-nb="sqwords"></span>
+
+    The actual Square Word images that I used in the animation were scanned from calligraphy that was done by Xu Bing himself. It made sense to place them where they are in the sequence since the morphs from Roman typeset ‘kong’ to the Square Word version is ‘close’ and then the morph from one Square Word character to another is ‘close’ along different dimensions, with a return to the Roman typesetting of ‘empty’ providing a kind of mirrored or symmetrical interpolation. This is an example of how the ordering of the keyframes was approached: as a number of attempts to allow adjacency between keyframes that seem to be in some sense similar.
+  </script>
+  <script id="9" type="text/markdown">
+    ### The Potential for a much More Ambitious ‘Interliteral’ Project
+
+    Even at the time I made this animation, I began to conceive of a more ambitious project. I understand this project from many different perspectives, all to do with inscription, reading, translation, but also very much concerned with *material* practices of writing and its associated and distinct *material cultures*, plural because material culture varies from language to language but especially, in this this specific project, across cultures having entirely different *systems of inscription*.&nbsp;<span data-nb="kittler"></span> There is the alphabetic culture sphere, on the one hand, and the sinographic culture sphere, on the other. One of the hypotheses underlying the project is that what it means *to write* in each of the culture spheres is fundamentally different; not that the significance or affect of *writing* is necessarily as *as* different, but that the act of writing, and what speech act theorist call its *felicity*, is very much distinct, and generatively so.
+
+    The project will gravitate around certain practices and aspects of material culture in the sinographic culture sphere. It will take a famous Chinese quatrain as its object of attention. The poem in question will be the same one that is explored in *riverIsland* and that has been extensively studied by scholars and translators for, literally, centuries, Wang Wei’s ‘Deer Park’ (王維 701–761, 鹿柴).&nbsp;<span data-nb="luzhai"></span>
+
+    We establish keyframes for various states of the poem across a number of explicit dimensions, initially:
+    1. Regular script (楷書, lineated, reading left-to-right, top-to-bottom)
+    1. Regular script (reading top-to-bottom, right-to-left)
+    1. Semi-cursive (行書, *ditto*)
+    1. Cursive (草書)
+    1. Square Word calligraphy pinyin (top-to-bottom, right-to-left)
+    1. Square Word calligraphy English (*ditto*)
+    1. Square Word calligraphy English (left-to-right, top-to-bottom)
+    1. English typeset Roman letters
+    1. Pinyin typeset Roman letters
+
+    ^ [loop]
+
+    Other keyframes may be introduced, for example: Clerical script (隸書), other Chinese script forms, English hand-writing, serif vs. sans-serif fonts, alternate fonts, alternate translations, including in other languages (perhaps corresponding in part to the material in Wang Wei, <a href="inapm1_bibliography#WANNW1">1987</a>), and so on.
+
+    Initial aesthetic outcomes will be animated interpolations, looping via the keyframes. An important outcome, however, is anticipated to be a selection of keyframes and frames from resonant, impactful interpolation states. These will be transposed onto the kind of stone slabs or tablets prepared for this purpose, and the inscription graphics will be carved in intaglio. Sets of the stones will be fabricated for gallery installation. Such sets of stones are produced in China for the purpose of preserving *model calligraphy* (法書), and there is a longstanding tradition of taking ink rubbings from such carved tablets as one important way to disseminate examples of the finest calligraphy, China’s most culturally prestigious visual art (Starr, [2008](inapm1_bibliography#STABT1)).
+  </script>
+  <script id="10" type="text/markdown">
+    #### Using Generative Models for this Project
+    The implicit relationships between keyframes are inherently multimodal, evoking different possible representations, as in both diffusion and transformer architectures. Hence, exploring generative AI to produce interpolation states seems likely to yield highly interesting, and – potentially – aesthetically and intellectually rich results. Just going through the proposed initial relations underlying the moves from keyframe to keyframe gives an interpretable sense of an implicit dimensionality which may motivate the interpolations:
+    - 1 -> 2 – writing orders
+    - 2 -> 3 – Chinese script styles
+    - 3 -> 4 – Chinese script styles; cursiveness
+    - 4 -> 5 – translingual (and art-critical) script styles; transcription
+    - 5 -> 6 – transcription; translation
+    - 6 -> 7 – writing orders
+    - 7 -> 8 – translingual script styles; cursiveness; typography
+    - 8 -> 9 – romanization (from translation to romanization)
+    - 9 -> 1 – romanization (from romanization to original)
+
+    Hypothetically, a model-based approach would discover and represent relations that corresponded with these intuitively (human-knowledge) derived motivations, but the models would also be likely to discover, operate, and generate in any number of other dimensions that might or might not be interpretable and interesting.
+  </script>
+  <script id="11" type="text/markdown">
+    ---
+  </script>
+  <script id="12" type="module">
+    const notes = nbs();
+    display(notes)
+  </script>
+  <script id="13" type="text/markdown">
+    ---
+  </script>
+  <script id="14" type="text/markdown">
+    #### [ previous text from programmatology.com: hidden in static site]
+    The atomic structure of written language and, I would argue, language-as-such differs in the two centers of ‘language and civilization.’ (I lean heavily and happily on Derrida in taking this view.) These differences are translated to digital media because linguistic structure itself — not simply linguistic ‘data’ — is transcribed by the entire historical process of digitization, taken to include the design of computing systems and data structures, not merely the actual transcription of cultural objects into bits and bytes. Basically, our programmatological systems reflect their derivation from an alphabetic system of linguistic inscription. Thus, I can easily use existing programming systems to manipulate western language in ways which correspond to encoded structures which are approximately ‘faithful’ to the language. It is easy to refer to letters as constituent of words, for instance. By contrast, it would be difficult, using existing systems in a straightforward way, to refer to the constituents of Chinese characters. Inevitably, in the first instance, while developing ideas and programs for text manipulation, I have taken advantage of the encoded structures of western language. I remain sharply aware that I am complicit with a privileged symbolic structure in doing so, recognizing that digitization could have been very different, commensurate with characters rather than letters. A recognition of this problematic underlies my most recent finished piece, <cite>riverIsland</cite>, which might otherwise be read as some sort of transcultural pastoral/lyric poetic exercise.
+  </script>
+  <script id="15" type="text/markdown" pinned="">
+    <!-- #### Draft Notes Here: -->
+    <div id="nbs">
+      <code>>>> Open this cell to edit note content divs. This #nbs div has display:none for the static website. <<<</code>
+      <div id="sqwords">Xu Bing, <a href="inapm1_bibliography#XU_SW1">1996</a>.</div>
+      <div id="kittler">The phrase is from the theory of Friedrich Kittler, <a href="inapm1_bibliography#KITDN1">1990</a>; <a href="inapm1_bibliography#KITGF1">1999</a>.</div>
+      <div id="luzhai">Cayley, <a href="inapm1_bibliography#CAYRI1">1999-2003</a>. See, for example, Wang Wei, <a href="inapm1_bibliography#WANNW1">1987</a>.</div>
+    </div>
+  </script>
+  <script id="16" type="module" pinned="">
+    const { nbs } = await import(await FileAttachment("resources/js/editorial.js").url());
+  </script>
+</notebook>
