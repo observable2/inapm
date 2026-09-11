@@ -2,7 +2,7 @@
 <notebook theme="air">
   <title>Prospectus</title>
   <script id="0" type="text/markdown">
-    <h1 style="font-variant: small-caps">Prospectus</h1>
+    <h1 style="font-variant: small-caps">prospectus</h1>
 
     # *In Networked and Programmable Media*
     ## Language Art with Personal Computation:<br>a comprehensive selection with integrated commentary<br>before and after Electronic Literature
@@ -204,9 +204,11 @@
     <div id="preserve"> Books can also, of course, be stored and preserved, and this is something that the publisher and ‘the publishing workflow,’ as a maker of copies, offers to the contemporary archive. Websites, both institutional and personal, come and, pointedly, *go* with a kind of anti-archival rhythm and fever (cf. [Derrida, 1996](inapm1_bibliography#DERAF1)). The task of digital publication is – or should be – also to encourage or ensure the preservation of what has been published. This brings up the (infinite recession) question of who or what preserves the *platforms* of digital publication, all of which, to date, are dependent on current software, even if it is open source. Is the current web stack our new ‘pen and paper’? I haven't gone into these aspects of the digital publication questions, and they remain unsolved. In advocating for and wishing to share my own, current investment in a platform that gives me ‘personal’ access to the contemporary web stack, I am, yes, betting on its relative stability, persistence, and backward compatibility with what is to come.</div>
   </script>
   <script id="348" type="module">
-    import { css, nbs } from "observable:@shadoof/inapm0_shared"
+    import { nbs } from "observable:@shadoof/inapm0_shared";
   </script>
   <script id="350" type="module">
+    const cssText = await import("observable:@shadoof/inapm0_shared").then(module => module.cssText);
+    const css = html`<style>${cssText}</style>`;
     display(css)
   </script>
 </notebook>

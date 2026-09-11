@@ -41,8 +41,8 @@
   <script id="5" type="text/markdown">
     Then we put this element’s `innerText` into a JavaScript `string literal`. In HyperCard, this text retained line breaks that are also respected here, in the JavaScript `literal`:
   </script>
-  <script id="6" type="application/vnd.observable.javascript" pinned="">
-    supplyTextString = `under it all
+  <script id="6" type="module" pinned="">
+    const supplyTextString = `under it all
     waking
     the simplicity of silence of sleeping form
     two points on a sheet of canvas and all the possible lines between them may prove to be a problem far beyond the capacities of the artist to resolve
@@ -616,13 +616,7 @@
     end showTrans
     ```
   </script>
-  <script id="38" type="application/vnd.observable.javascript" pinned="">
-    import { css, fadeInByWord, randomInteger } from "@shadoof/inapm0_shared"
-  </script>
-  <script id="39" type="application/vnd.observable.javascript">
-    delay = ms => new Promise(res => setTimeout(res, ms))
-  </script>
-  <script id="40" type="application/vnd.observable.javascript" pinned="">
-    _css = css
+  <script id="38" type="module" pinned="">
+    import { delay, fadeInByWord, randomInteger } from "observable:@shadoof/inapm0_shared"
   </script>
 </notebook>

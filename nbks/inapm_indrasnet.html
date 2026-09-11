@@ -197,10 +197,11 @@
   <script id="5" type="text/markdown" pinned="">
     *Draft in this cell.*
   </script>
-  <script id="45" type="application/vnd.observable.javascript" pinned="">
-    _nbsNotes = nbs()
+  <script id="52" type="module" pinned="">
+    const { value: nbsNotes } = await nbs().next();
+    display(nbsNotes);
   </script>
-  <script id="16" type="text/markdown">
+  <script id="16" type="text/markdown" pinned="">
     #### *Note Drafts:*
     <div id="nbs"> <!-- divs with this id have display:none in these inapm notebooks -->
 
@@ -208,10 +209,11 @@
 
     </div>
   </script>
-  <script id="6" type="application/vnd.observable.javascript" pinned="">
-    import { css, nbs } from "@shadoof/inapm0_shared"
+  <script id="6" type="module" pinned="">
+    import { css, nbs } from "observable:@shadoof/inapm0_shared"
   </script>
-  <script id="7" type="application/vnd.observable.javascript" pinned="">
-    _css = css
+  <script id="7" type="module" pinned="">
+    const css = await import("observable:@shadoof/inapm0_shared");
+    display(css);
   </script>
 </notebook>
