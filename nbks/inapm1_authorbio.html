@@ -1,0 +1,34 @@
+<!doctype html>
+<notebook theme="cotton">
+  <title>About the Author</title>
+  <script id="1" type="text/markdown">
+    # About the Author
+  </script>
+  <script id="2" type="text/html">
+    <img  id=headshot src="resources/imgs/Cayley_FonesHeadshot-544x618.webp" alt="Headshot" onerror=${withImageFallback(headshotAttachment)} width=200 style="float:right" />
+
+    <p>Despite being caught up in the language-and-culture typhoon of large language models, <b></b>John Cayley</b> persists as a human maker of computational language art in networked and programmable media. He has published books of poetry and translation, and a collection of essays, <a href="https://doi.org/10.5040/9781501335792"><cite>Grammalepsy</cite></a>, its title naming one of writing’s many pathologies. Meanwhile, Cayley has explored dynamic and ambient poetics, heuristic (as opposed to GPT-hermetic) text generation, transliteral morphing, aestheticized vectors of reading, and transactive synthetic language (as in ‘smart speakers’ and listeners). More academically, he is now investigating the ontology of language, and is doing so in the context of ongoing philosophically-informed, practice-based research. An augmented and reconfigured edition of his digital language art poetry collection, <a href="https://counterpathpress.org/image-generation-john-cayley"><cite>Image Generation</cite></a>, was published by Counterpath Press, 2023. Those more curious about his work are encouraged to visit <a href="https://nllf.net">nllf.net</a>. Cayley is Professor of <a href="https://literaryarts.brown.edu">Literary Arts</a> at Brown University.</p>
+
+    <ul>
+    <li><a href="https://vivo.brown.edu/display/jcayley">Institutional research profile</a></li>
+    <li>Personal site: <a href="https://programmatology.com">programmatology.com</a></li>
+    <li>@programmatology (old-school IG only)</li>
+    </ul>
+    <hr>
+  </script>
+  <script id="3" type="module">
+    const headshotAttachment = FileAttachment("Cayley_FonesHeadshot-544x618.webp");
+
+    function withImageFallback(attachment) {
+      return async (event) => {
+        const img = event.currentTarget;
+        img.onerror = null; // avoid a fallback loop if the attachment also fails
+        try {
+          img.src = await attachment.url();
+        } catch (error) {
+          console.error(`Interliteral: no static path or attachment found for ${attachment.name}`, error);
+        }
+      };
+    }
+  </script>
+</notebook>
